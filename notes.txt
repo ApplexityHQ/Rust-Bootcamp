@@ -1,0 +1,5 @@
+INSTALLATION
+    > mkdir rust-proj
+    > cd rust-proj
+    > cargo init
+    > 
