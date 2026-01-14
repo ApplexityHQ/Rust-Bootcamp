@@ -1,0 +1,7 @@
+Lec Slides :
+
+Part 1
+https://cdn.100xdevs.com/youtube/rust-part-1.pdf
+
+Part 2
+https://cdn.100xdevs.com/youtube/rust-part-2.pdf

@@ -140,6 +140,73 @@ fn main() {
         // stack_fn();   // Call the function that uses stack memory
         // heap_fn();    // Call the function that uses heap memory
         // update_string();  // Call the function that changes size of variable at runtime
+
+
+
+
+
+
+
+
+/* 
+#5 ========== Ownership (#Jargon-Two)  ========= 
+*/
+
+    // Example #1 - Passing stack Variables inside functions
+    
+        // let x = 1; // crated on stack
+        // let y = 3; // created on stack
+        // println!("{}", sum(x, y));
+        // println!("Hello, world!");
+
+    // Example #2 - Scoping variables in the same fn
+
+            // let x = 1; // crated on stack
+            // {
+            // let y = 3; // created on stack
+            // }
+
+            // println!("{}", y); // throws error
+
+
+            // let mut str = String::from("Hello");
+            // update_str(&mut str);
+            // println!("{}", str);
+
+
+            // let mut my_string = String::from("Hello");  
+            // let my_string = takes_ownership(my_string);
+            // println!("{}", my_string); // this line would cause a compiler error because ownership has been removed.
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+#6 ========== Borrowing & Refrences (#Jargon-Three)  ========= 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -216,3 +283,28 @@ fn main() {
     //     s.push_str(" and some additional text");
     //     println!("After update: {}", s);
     // }
+
+
+
+
+
+
+
+
+
+
+        // fn sum(a: i32, b: i32) -> i32 {
+        // let c = a + b;
+        // return c;
+        // }
+
+
+    // fn update_str(str: &mut String) {
+    //     str.push_str(" World");
+    // }
+
+
+            fn takes_ownership(some_string) -> String {
+                println!("{}", some_string);
+                return some_string
+            }
