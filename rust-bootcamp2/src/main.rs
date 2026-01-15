@@ -69,18 +69,55 @@
 // }
 
 
-// # Understanding Structs
-struct User {
-    first_name: String,
-    last_name: String,
-    age: i32,
-}
-fn main() {
-    let user = User {
-        first_name: String::from("Applexity"),
-        last_name: String::from("Ox"),
-        age: 20,
-    };
 
-    println!(" First Name : {} Last Name: {} Age: {}" , user.first_name, user.last_name, user.age);
+
+
+// # Understanding Structs
+
+// struct User {
+//     first_name: String,
+//     last_name: String,
+//     age: i32,
+// }
+// fn main() {
+//     let user = User {
+//         first_name: String::from("Applexity"),
+//         last_name: String::from("Ox"),
+//         age: 20,
+//     };
+
+//     println!(" First Name : {} Last Name: {} Age: {}" , user.first_name, user.last_name, user.age);
+// }
+
+
+
+
+
+
+
+
+
+// Implementing a struct
+
+
+
+struct Rect {
+    widht: u32,
+    height: u32,
 }
+
+impl Rect {
+    fn area(&self) -> u32 {
+        self.widht * self.height
+    }
+}
+
+fn main() {
+    let rect = Rect {
+        widht: 30,
+        height: 50,
+    };
+    println!("The area of the rectangle is {}", rect.area());
+}
+
+
