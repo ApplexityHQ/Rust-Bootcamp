@@ -133,22 +133,112 @@
 
 // Structs lets you structure data together.
 
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
-}
+// struct User {
+//     active: bool,
+//     username: String,
+//     email: String,
+//     sign_in_count: u64,
+// }
 
-fn main() {
-    let user1 = User {
-        active: true,
-        username: String::from("Applexity"),
-        email: String::from("applexity@gmail.com"),
-        sign_in_count: 1,
-    };
-    print!("User 1 username: {:?}", user1.username);
-    print!("User 1 active: {:?}", user1.active);
-    print!("User 1 email: {:?}", user1.email);
-    print!("User 1 sign_in_count: {:?}", user1.sign_in_count);
-}
+// fn main() {
+//     let user1 = User {
+//         active: true,
+//         username: String::from("Applexity"),
+//         email: String::from("applexity@gmail.com"),
+//         sign_in_count: 1,
+//     };
+//     print!("User 1 username: {:?}", user1.username);
+//     print!("User 1 active: {:?}", user1.active);
+//     print!("User 1 email: {:?}", user1.email);
+//     print!("User 1 sign_in_count: {:?}", user1.sign_in_count);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Enums let you enumerate over various types of a value.
+
+// enum Direction {
+//     North,
+//     East,
+//     West,
+//     South,
+// }
+
+// fn main() {
+//     let my_direction = Direction::North;
+//     let new_direction = my_direction;
+//     move_around(new_direction);
+// }
+
+// fn new_direction(direction: Direction) {
+//     // implement logic to move a character around
+// }
+
+
+
+
+
+
+
+// Option Enum (For Null Values in Rust)
+
+// fn find_first_a(s: String) -> Option <i32> {
+//     for (index, character) in s.chars().enumerate() {
+//         if character === 'a' {
+//             return Some(index as i32);
+//         }
+//     }
+//     return None;
+// }
+
+// fn main() {
+//     let my_string = String::from("applexity");
+//     match find_first_a(my_string) {
+//             Some(index) => println!("The letter 'a' is found at index: {}", index);
+//             None => print!("The letter 'a' is not found in the string.");
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Results
+// Write a funtion that reads the contents of a file.
+
+// use std::fs;
+
+// fn main() {
+//     let greeting_file_result = fs::read_to_string("a.txt"); // Result
+
+//     match greeting_file_result {
+//         OK(file_content) => {
+//             println!("File read successfully: {:?}", file_content);
+//         },
+//         Err(error) => {
+//             println!("Failed to read file: {:?}", error);
+//         } 
+//     }
+// }
+
