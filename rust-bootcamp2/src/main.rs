@@ -242,3 +242,21 @@
 //     }
 // }
 
+
+
+
+
+
+
+// Package management
+
+// External packages/crate
+// > cargo init <crate_name>
+
+// creading current time.
+
+use chrono::Local;
+fn main() {
+    let now = Local::now();
+    println!("Current Time is {}", now);
+}
