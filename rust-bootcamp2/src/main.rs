@@ -101,23 +101,54 @@
 
 
 
-struct Rect {
-    width: u32,
-    height: u32,
+// struct Rect {
+//     width: u32,
+//     height: u32,
+// }
+
+// impl Rect {
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//     }
+// }
+
+// fn main() {
+//     let rect = Rect {
+//         width: 30,
+//         height: 50,
+//     };
+//     println!("The area of the rectangle is {}", rect.area());
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// Structs lets you structure data together.
+
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
 }
 
-impl Rect {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
-}
-    
 fn main() {
-    let rect = Rect {
-        width: 30,
-        height: 50,
+    let user1 = User {
+        active: true,
+        username: String::from("Applexity"),
+        email: String::from("applexity@gmail.com"),
+        sign_in_count: 1,
     };
-    println!("The area of the rectangle is {}", rect.area());
+    print!("User 1 username: {:?}", user1.username);
+    print!("User 1 active: {:?}", user1.active);
+    print!("User 1 email: {:?}", user1.email);
+    print!("User 1 sign_in_count: {:?}", user1.sign_in_count);
 }
-
-
