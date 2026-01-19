@@ -275,6 +275,8 @@ fn main() {
 
 
 
+/*
+
 enum Coin {
     Penny,
     Nickel,
@@ -299,4 +301,6 @@ fn value_in_cents(coin: Coin) -> u8 {
         }
     }
 }
+
+*/
 
