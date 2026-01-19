@@ -260,3 +260,43 @@ fn main() {
     let now = Local::now();
     println!("Current Time is {}", now);
 }
+
+
+
+
+
+
+
+
+
+
+// Matching on enums
+
+
+
+
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState), // Variant can hold data
+}
+
+enum UsState {
+    Alabama,
+    Alaska,
+    // ... other states
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1,
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter(state) => { // Bind the inner value to a variable 'state'
+            println!("State quarter from {:?}!", state);
+            25
+        }
+    }
+}
+
