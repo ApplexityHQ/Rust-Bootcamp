@@ -274,18 +274,64 @@
 
 // Trait Implementation:
 
-trait _Greet {
-    fn say_hello(&self);
+// trait _Greet {
+//     fn say_hello(&self);
+// }
+
+<<<<<<< HEAD
+// struct _Person {
+//     name: String,
+// }
+
+// // Implement the Greet trait for the Person struct
+// impl _Greet for _Person {
+//     fn say_hello(&self) {
+//         println!("Hello, my name is {}", self.name);
+//     }
+// }
+
+=======
+
+
+
+
+
+
+
+
+
+// Matching on enums
+
+
+
+
+/*
+
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState), // Variant can hold data
 }
 
-struct _Person {
-    name: String,
+enum UsState {
+    Alabama,
+    Alaska,
+    // ... other states
 }
 
-// Implement the Greet trait for the Person struct
-impl _Greet for _Person {
-    fn say_hello(&self) {
-        println!("Hello, my name is {}", self.name);
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1,
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter(state) => { // Bind the inner value to a variable 'state'
+            println!("State quarter from {:?}!", state);
+            25
+        }
     }
 }
 
+*/
+
+>>>>>>> cb64344b5c077aa49cb5650e24f11cecac9766ab
