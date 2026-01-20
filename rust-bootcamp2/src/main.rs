@@ -255,8 +255,37 @@
 
 // creading current time.
 
-use chrono::Local;
-fn main() {
-    let now = Local::now();
-    println!("Current Time is {}", now);
+// use chrono::Local;
+// fn main() {
+//     let now = Local::now();
+//     println!("Current Time is {}", now);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// Trait Implementation:
+
+trait _Greet {
+    fn say_hello(&self);
 }
+
+struct _Person {
+    name: String,
+}
+
+// Implement the Greet trait for the Person struct
+impl _Greet for _Person {
+    fn say_hello(&self) {
+        println!("Hello, my name is {}", self.name);
+    }
+}
+
