@@ -246,39 +246,13 @@
 
 
 
-
-
-// Package management
-
-// External packages/crate
-// > cargo init <crate_name>
-
-// creading current time.
-
-// use chrono::Local;
-// fn main() {
-//     let now = Local::now();
-//     println!("Current Time is {}", now);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
 // Trait Implementation:
 
 // trait _Greet {
 //     fn say_hello(&self);
 // }
 
-<<<<<<< HEAD
+
 // struct _Person {
 //     name: String,
 // }
@@ -290,7 +264,7 @@
 //     }
 // }
 
-=======
+
 
 
 
@@ -302,11 +276,11 @@
 
 // Matching on enums
 
-
-
-
 /*
 
+fn mina() {
+    println("hi");
+}
 enum Coin {
     Penny,
     Nickel,
@@ -334,4 +308,53 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 */
 
->>>>>>> cb64344b5c077aa49cb5650e24f11cecac9766ab
+
+
+
+
+
+
+
+
+
+/*
+====================
+Package management
+===================
+*/ 
+
+
+
+// 
+
+// External packages/crate
+// > cargo init <crate_name>
+
+// creading current time.
+
+use chrono::Local;
+fn main() {
+    let now = Local::now();
+    println!("Current Time is {}", now);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
