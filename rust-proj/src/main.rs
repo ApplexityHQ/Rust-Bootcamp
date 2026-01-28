@@ -304,7 +304,7 @@ fn main() {
     // }
 
 
-            fn takes_ownership(some_string) -> String {
-                println!("{}", some_string);
-                return some_string
-            }
+            // fn takes_ownership(some_string) -> String {
+            //     println!("{}", some_string);
+            //     return some_string
+            // }

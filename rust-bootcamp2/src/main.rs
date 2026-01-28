@@ -332,11 +332,54 @@ Package management
 
 // creading current time.
 
-use chrono::Local;
+// use chrono::Local;
+// fn main() {
+//     let now = Local::now();
+//     println!("Current Time is {}", now);
+// }
+
+
+
+
+
+
+
+
+/*
+====================
+Memory management
+===================
+*/ 
+
+// Ex 1: Simple example of memory for a simple program.
+// fn main() {
+//     let a = 1; // stored in stack 
+//     let b = 2; // stored in stack 
+//     let sum = a + b; // stored in another stack frame
+//     println!("Sum if {}", sum);
+// }
+
+// fn find_sum(a: i32, b: i32) -> i32 {
+//     let ans = a + b;
+//     return ans;
+// }
+
+
+
+// Ex 2: How it's stored in heap (allocated at runtime) & its addresss is saved in stack frame
+
 fn main() {
-    let now = Local::now();
-    println!("Current Time is {}", now);
+    let name = String::from("Hello");
+    println!("Name is {}", name)
 }
+
+// stored in stack:
+/*
+        stored on the stack:
+            - numbers, booleans, fixed sized arrays, structs, refrences
+        stored on the heap:
+            - strings, vectors, hashmap, large arrays/structs that can't fit in the stack
+*/
 
 
 
