@@ -368,10 +368,13 @@ Memory management
 
 // Ex 2: How it's stored in heap (allocated at runtime) & its addresss is saved in stack frame
 
-fn main() {
-    let name = String::from("Hello");
-    println!("Name is {}", name)
-}
+// fn main() {
+//     let name = String::from("Hello");
+//     println!("Name is {}", name)
+
+//     let mut name2 = String::from("Hello2 ");
+//     name2.push_str("World");
+// }
 
 // stored in stack:
 /*
@@ -396,8 +399,173 @@ fn main() {
 
 
 
+/*
+===========================
+jargons to be covered: (Already Covered in Previous Cohort repo. just revise here)
+1. Ownership
+2. Moving
+3. Borrowing
+4. References    
+===========================
+*/ 
+
+/*  1. Ownership
+        - Rust does not have garbage collector, but it has a concept of ownership which helps in romving data from heap as soon as the owner goes out of scope from stack.
+
+    2. Move
+        - owernership is moved once it gets transfered from one to another.
+        - and old one becomes a null or dangling pointer (so it becomes invalid)
+        - Insted of pointing 2 owners, USE: .clone() 
+    3. Borrowing
+        - Borrowing = temporarily using data without owning it
+        - &T      // immutable borrow (read-only)
+        - &mut T  // mutable borrow (read & write)
+
+
+
+*/
+
+// ex: Moving example (the below code won't compile)
+// fn main() {
+//     let s1 = String::from(Hello);
+//     let s2 = s1;
+//     println!("Number is {}", s2);
+// }
 
 
 
 
+
+// Ex 2: Moving example 2
+// fn create_string() {
+//     let s1 = String::from("hey");
+//     let s2 = s1;
+
+//     //print the string.
+//     print!("{}", s1);
+// }
+
+// fn main() {
+//     //call the function
+//     create_string();
+// }
+
+
+
+
+
+// Ex 3: 
+
+// fn main() {
+//     let mut s1 = String::from("aplexity");
+// }
+
+// fn do_something(s2:String) {
+//     print!("{}", s2);
+//     return s2;
+// }
+
+
+
+// Ex 4: Borrowing example
+
+// fn create_string() {
+//     let s1 = String::from("hello");
+//     print_str(&s1); // borrowed
+// }
+
+// fn print_str(s2: &String) {
+//     println!("{}", s2); 
+// }
+
+// fn main() {
+//     // call the function
+//     create_string();
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+===========================
+Advanced Rust (slightly)
+===========================
+1. Collections, vectors
+2. Iterators
+3. Hashmaps
+4. Strings, &str and slices
+5. Generics
+6. Traits
+7. Multithreading
+8. Macros
+9. Futures
+10. Async/await and tokio
+11. Lifetimes.
+===========================
+
+
+*/ 
+
+
+
+
+
+
+// 1. Vector 
+
+// fn main() {
+//     let mut vec = Vec::new();
+//     vec.push(1);
+//     vec.push(2);
+
+//     println!("{:?}", vec);
+
+// }
+
+
+// Ex on vec: Write a function that takes vector as an input and returns a vector with even values.
+
+use std::vec;
+
+fn main() {
+    let mut vec = Vec::new();
+    vec.push(1); 
+    vec.push(2); 
+    vec.push(3); // [1,2,3]
+    println!("{:?}", is_even(vec))  ; 
+
+}
+
+fn is_even(vec: Vec<i32>) -> Vec<i32> {
+    let mut new_vec = Vec::new();
+    for val in vec {
+        if val % 2 == 0 {
+            new_vec.push(val);
+        }
+    }
+    return new_vec;
+}
 
