@@ -534,7 +534,7 @@ Advanced Rust (slightly)
 
 
 
-// 1. Vector 
+// 1. Vector
 
 // fn main() {
 //     let mut vec = Vec::new();
@@ -548,24 +548,43 @@ Advanced Rust (slightly)
 
 // Ex on vec: Write a function that takes vector as an input and returns a vector with even values.
 
-use std::vec;
+// use std::vec;
+
+// fn main() {
+//     let mut vec = Vec::new();
+//     vec.push(1); 
+//     vec.push(2); 
+//     vec.push(3); // [1,2,3]
+//     println!("{:?}", is_even(vec))  ; 
+
+// }
+
+// fn is_even(vec: Vec<i32>) -> Vec<i32> {
+//     let mut new_vec = Vec::new();
+//     for val in vec {
+//         if val % 2 == 0 {
+//             new_vec.push(val);
+//         }
+//     }
+//     return new_vec;
+// }
+
+
+
+
+// Explicitly giving typed using generics  Vec<T>
 
 fn main() {
-    let mut vec = Vec::new();
-    vec.push(1); 
-    vec.push(2); 
-    vec.push(3); // [1,2,3]
-    println!("{:?}", is_even(vec))  ; 
-
-}
-
-fn is_even(vec: Vec<i32>) -> Vec<i32> {
-    let mut new_vec = Vec::new();
-    for val in vec {
-        if val % 2 == 0 {
-            new_vec.push(val);
-        }
+    let numbers = vec![1,2,3];
+    for numbers in numbers {
+        println!("{}", numbers);
     }
-    return new_vec;
 }
+
+
+
+
+
+
+
 
