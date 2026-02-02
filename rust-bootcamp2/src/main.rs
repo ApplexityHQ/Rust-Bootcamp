@@ -571,26 +571,26 @@ Advanced Rust (slightly)
 
 
 // Approach 2:
-fn even_values(v: &mut Vec<i32>) {
-    let mut i = 0;
-    while i < v.len() {
-        if v[i] % 2 !=0 {
-            v.remove(i);
-        } else {
-            i += 1;
-        }
-    }
-}
+// fn even_values(v: &mut Vec<i32>) {
+//     let mut i = 0;
+//     while i < v.len() {
+//         if v[i] % 2 !=0 {
+//             v.remove(i);
+//         } else {
+//             i += 1;
+//         }
+//     }
+// }
 
-fn main() {
-    let mut vec = Vec::new();
-    vec.push(1);
-    vec.push(2);
-    vec.push(3);
-    vec.push(4);
-    even_values(&mut vec);
-    print!("Updated vector is {:?}", vec);
-}
+// fn main() {
+//     let mut vec = Vec::new(); // vec![1,2,3,4];
+//     vec.push(1);
+//     vec.push(2);
+//     vec.push(3);
+//     vec.push(4);
+//     even_values(&mut vec);
+//     print!("Updated vector is {:?}", vec);
+// }
 
 
 
@@ -610,6 +610,59 @@ fn main() {
 
 
 
+
+
+// explicitly giving vecters a type using generics
+
+// fn main() {
+//     let numbers: Vec<i32> = vec![1,2,3];
+//     for number in numbers {
+//         println!("{}", number);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+// 2. Hashmaps
+
+/*
+    - Hashmaps stores key value pair in rust
+    - Similar to objects in Js
+    - Dict in Python
+    - HashMaps in Java
+*/
+
+
+
+
+use std::collections::HashMap;
+
+fn main() {
+    let mut users = HashMap::new();
+
+    users.insert(String::from("Applexity"), 22);
+    users.insert(String::from("Applexity 2"), 32);
+
+    // {
+    //      applexity: 22,
+    //      applexity2:23
+    // }
+
+    let first_user_age = users.get("Applexiiiityy"); 
+
+    match first_user_age {
+        Some(age) => println!("Age is {}", age),
+        None => println!("User not found in the db"),
+    }
+
+}
 
 
 
