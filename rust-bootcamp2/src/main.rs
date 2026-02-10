@@ -525,19 +525,79 @@ Advanced Rust (slightly)
 //     println!("{:?}", nums);
 // }
 
-fn main() {
-    let mut v1 = vec![1, 3, 4];
+// fn main() {
+//     let mut v1 = vec![1, 3, 4];
 
-    let v1_iter = v1.iter();
+//     let v1_iter = v1.iter();
 
-    for val in v1_iter {
-        println!("{}", val);
+//     for val in v1_iter {
+//         println!("{}", val);
 
-        println!("{:?}", v1);
-    }
-}
+//         println!("{:?}", v1);
+//     }
+// }
 
 // Types of Iterators
 // 1. .iter
 // 2. .iter_mut
 // 3. into_iter()
+
+
+
+// Iterators (Consuming Adaptors)
+
+// fn main () {
+//     let v1 = vec![1,3,4];
+//     let v1_iter = v1.iter();
+
+//     let sum = v1_iter.sum();
+
+//     println!("sum is {}", sum); 
+
+//     for i in v1_iter {}
+//     println!("{:?}", v1);
+// }
+
+
+
+// filter even values
+// fn main() {
+//     let v1 = vec![1,3,4,5];
+//     let iter = v1.iter();
+    
+//     let iter2 = iter.filter(|x| *x % 2 == 0);
+
+//     for x in iter2 {
+//         println!("{}", x);
+//     }
+// }
+
+
+
+
+
+// filter odd values
+// fn main() {
+//     let v1 = vec![1,3,4,5];
+//     let iter = v1.iter();
+    
+//     let iter2 = iter.filter(|x| *x % 2 == 1);
+
+//     for x in iter2 {
+//         println!("{}", x);
+//     }
+// }
+
+// Q. Write the logic to first filter all odd values then double each value and create a new vector
+
+fn filter_and_map(v) -> Vec<i32> {
+    let new_iter = v.iter().filter(|x| *x % 2 == 1).map(|x| x + 1);
+    let new_vec = new_iter.collect();
+    return new_vec;
+}
+
+fn main() {
+    let v1 = vec![1,2,4,5];
+    let ans = filter_and_map(v1);
+    println!("{:?}", ans);
+}
