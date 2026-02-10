@@ -2,7 +2,6 @@
 //     println!("Hello, world!");
 // }
 
-
 /*
 ===================================================
 ================= Variables (nums, strings, bools)
@@ -11,8 +10,6 @@
 ================== Functions
 ===================================================
 */
-
-
 
 // Que: Check if a number is even.
 // fn main () {
@@ -28,22 +25,18 @@
 //     }
 // }
 
-
-
-
-
 // que: Write a function fib that finds the fibbonacci of a number it takes as input.
 // fn main() {
 //     println!("{}", fib(10));
 // }
 
-// fn fib (num: u32) -> u32 { 
+// fn fib (num: u32) -> u32 {
 //     let mut first = 0;
 //     let mut second = 1;
 
 //     if num == 0 {
 //         return first;
-//     }    
+//     }
 
 //     if num == 1 {
 //         return second;
@@ -57,7 +50,6 @@
 //     return second;
 // }
 
-
 // Que: Write a function get_string_length that takes a string as an input returns its length.
 // fn main() {
 //     let name = String::from("my name is applexity");
@@ -67,10 +59,6 @@
 // fn get_string_length(str: String) -> usize {
 //     str.chars().count()
 // }
-
-
-
-
 
 // # Understanding Structs
 
@@ -89,17 +77,7 @@
 //     println!(" First Name : {} Last Name: {} Age: {}" , user.first_name, user.last_name, user.age);
 // }
 
-
-
-
-
-
-
-
-
 // Implementing a struct
-
-
 
 // struct Rect {
 //     width: u32,
@@ -119,17 +97,6 @@
 //     };
 //     println!("The area of the rectangle is {}", rect.area());
 // }
-
-
-
-
-
-
-
-
-
-
-
 
 // Structs lets you structure data together.
 
@@ -153,20 +120,6 @@
 //     print!("User 1 sign_in_count: {:?}", user1.sign_in_count);
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Enums let you enumerate over various types of a value.
 
 // enum Direction {
@@ -185,12 +138,6 @@
 // fn new_direction(direction: Direction) {
 //     // implement logic to move a character around
 // }
-
-
-
-
-
-
 
 // Option Enum (For Null Values in Rust)
 
@@ -211,19 +158,6 @@
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Results
 // Write a funtion that reads the contents of a file.
 
@@ -238,20 +172,15 @@
 //         },
 //         Err(error) => {
 //             println!("Failed to read file: {:?}", error);
-//         } 
+//         }
 //     }
 // }
-
-
-
-
 
 // Trait Implementation:
 
 // trait _Greet {
 //     fn say_hello(&self);
 // }
-
 
 // struct _Person {
 //     name: String,
@@ -263,16 +192,6 @@
 //         println!("Hello, my name is {}", self.name);
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
 
 // Matching on enums
 
@@ -308,24 +227,13 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 */
 
-
-
-
-
-
-
-
-
-
 /*
 ====================
 Package management
 ===================
-*/ 
+*/
 
-
-
-// 
+//
 
 // External packages/crate
 // > cargo init <crate_name>
@@ -338,23 +246,16 @@ Package management
 //     println!("Current Time is {}", now);
 // }
 
-
-
-
-
-
-
-
 /*
 ====================
 Memory management
 ===================
-*/ 
+*/
 
 // Ex 1: Simple example of memory for a simple program.
 // fn main() {
-//     let a = 1; // stored in stack 
-//     let b = 2; // stored in stack 
+//     let a = 1; // stored in stack
+//     let b = 2; // stored in stack
 //     let sum = a + b; // stored in another stack frame
 //     println!("Sum if {}", sum);
 // }
@@ -363,8 +264,6 @@ Memory management
 //     let ans = a + b;
 //     return ans;
 // }
-
-
 
 // Ex 2: How it's stored in heap (allocated at runtime) & its addresss is saved in stack frame
 
@@ -384,30 +283,15 @@ Memory management
             - strings, vectors, hashmap, large arrays/structs that can't fit in the stack
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 ===========================
 jargons to be covered: (Already Covered in Previous Cohort repo. just revise here)
 1. Ownership
 2. Moving
 3. Borrowing
-4. References    
+4. References
 ===========================
-*/ 
+*/
 
 /*  1. Ownership
         - Rust does not have garbage collector, but it has a concept of ownership which helps in romving data from heap as soon as the owner goes out of scope from stack.
@@ -415,7 +299,7 @@ jargons to be covered: (Already Covered in Previous Cohort repo. just revise her
     2. Move
         - owernership is moved once it gets transfered from one to another.
         - and old one becomes a null or dangling pointer (so it becomes invalid)
-        - Insted of pointing 2 owners, USE: .clone() 
+        - Insted of pointing 2 owners, USE: .clone()
     3. Borrowing
         - Borrowing = temporarily using data without owning it
         - &T      // immutable borrow (read-only)
@@ -432,10 +316,6 @@ jargons to be covered: (Already Covered in Previous Cohort repo. just revise her
 //     println!("Number is {}", s2);
 // }
 
-
-
-
-
 // Ex 2: Moving example 2
 // fn create_string() {
 //     let s1 = String::from("hey");
@@ -450,11 +330,7 @@ jargons to be covered: (Already Covered in Previous Cohort repo. just revise her
 //     create_string();
 // }
 
-
-
-
-
-// Ex 3: 
+// Ex 3:
 
 // fn main() {
 //     let mut s1 = String::from("aplexity");
@@ -465,8 +341,6 @@ jargons to be covered: (Already Covered in Previous Cohort repo. just revise her
 //     return s2;
 // }
 
-
-
 // Ex 4: Borrowing example
 
 // fn create_string() {
@@ -475,39 +349,13 @@ jargons to be covered: (Already Covered in Previous Cohort repo. just revise her
 // }
 
 // fn print_str(s2: &String) {
-//     println!("{}", s2); 
+//     println!("{}", s2);
 // }
 
 // fn main() {
 //     // call the function
 //     create_string();
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 ===========================
@@ -527,12 +375,7 @@ Advanced Rust (slightly)
 ===========================
 
 
-*/ 
-
-
-
-
-
+*/
 
 // 1. Vector
 
@@ -545,16 +388,14 @@ Advanced Rust (slightly)
 
 // }
 
-
 // Ex on vec: Write a function that takes vector as an input and returns a vector with even values.
-
 
 // fn main() {
 //     let mut vec = Vec::new();
-//     vec.push(1); 
-//     vec.push(2); 
+//     vec.push(1);
+//     vec.push(2);
 //     vec.push(3); // [1,2,3]
-//     println!("{:?}", is_even(&vec))  ; 
+//     println!("{:?}", is_even(&vec))  ;
 
 // }
 
@@ -567,8 +408,6 @@ Advanced Rust (slightly)
 //     }
 //     return new_vec;
 // }
-
-
 
 // Approach 2:
 // fn even_values(v: &mut Vec<i32>) {
@@ -592,11 +431,6 @@ Advanced Rust (slightly)
 //     print!("Updated vector is {:?}", vec);
 // }
 
-
-
-
-
-
 // Explicitly giving typed using generics Vec<T>
 
 // fn main() {
@@ -605,12 +439,6 @@ Advanced Rust (slightly)
 //         println!("{}", numbers);
 //     }
 // }
-
-
-
-
-
-
 
 // explicitly giving vecters a type using generics
 
@@ -621,15 +449,6 @@ Advanced Rust (slightly)
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
 // 2. Hashmaps
 
 /*
@@ -639,30 +458,86 @@ Advanced Rust (slightly)
     - HashMaps in Java
 */
 
+// use std::collections::HashMap;
 
+// fn main() {
+//     let mut users = HashMap::new();
 
+//     users.insert(String::from("Applexity"), 22);
+//     users.insert(String::from("Applexity 2"), 32);
 
-use std::collections::HashMap;
+//     // {
+//     //      applexity: 22,
+//     //      applexity2:23
+//     // }
+
+//     let first_user_age = users.get("Applexiiiityy");
+
+//     match first_user_age {
+//         Some(age) => println!("Age is {}", age),
+//         None => println!("User not found in the db"),
+//     }
+
+// }
+
+// 3. Iterators
+
+// ex:
+// let v1 = vec![1,2,3];
+// let v1_iter = v1.iter();
+
+// ex: iterator is something like
+// fn main() {
+//     let v1 = vec![1,2,4];
+//     for val in v1 {
+//         print!("Got it: {val}");
+//     }
+// }
+
+// // ex: iterator using loops
+// fn main() {
+//     let nums = vec![1,2,4];
+
+//     for val in nums {
+//         println!("{}", val);
+//     }
+
+// }
+
+// ex: iterating after creating an 'iterator'
+// fn main() {
+//     let nums = vec![1,2,4,5];
+//     let iter = nums.iter();
+
+//     for value in iter {
+//         println!("{}", value);
+//     }
+// }
+
+// fn main() {
+//     let mut nums = vec![1,3,4];
+//     let iter = nums.iter_mut();
+
+//     for value in iter {
+//         *value = *value + 1;
+//     }
+
+//     println!("{:?}", nums);
+// }
 
 fn main() {
-    let mut users = HashMap::new();
+    let mut v1 = vec![1, 3, 4];
 
-    users.insert(String::from("Applexity"), 22);
-    users.insert(String::from("Applexity 2"), 32);
+    let v1_iter = v1.iter();
 
-    // {
-    //      applexity: 22,
-    //      applexity2:23
-    // }
+    for val in v1_iter {
+        println!("{}", val);
 
-    let first_user_age = users.get("Applexiiiityy"); 
-
-    match first_user_age {
-        Some(age) => println!("Age is {}", age),
-        None => println!("User not found in the db"),
+        println!("{:?}", v1);
     }
-
 }
 
-
-
+// Types of Iterators
+// 1. .iter
+// 2. .iter_mut
+// 3. into_iter()
