@@ -852,15 +852,71 @@ Advanced Rust (slightly)
 
 // move closure
 
-use std::thread;
+// use std::thread;
 
-fn main() {
-    let x = 1;
-    {
-        let v = vec![1,2,3,4];
-        thread::spawn(|| {
-            println!("{:?}", v);
-        });
-    }
-    print!("{}", x);
-}
+// fn main() {
+//     let x = 1;
+//     {
+//         let v = vec![1,2,3,4];
+//         thread::spawn(|| {
+//             println!("{:?}", v);
+//         });
+//     }
+//     print!("{}", x);
+// }
+
+
+
+
+
+
+// Message Passing
+
+
+// mpsc:  multiple producer single consumer 
+// use std::sync::mpsc;
+// use std::thread;
+
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+
+//     thread::spawn(move || {
+//         let val = String::from("heeyyy");
+//         tx.send(val).unwrap();
+//     });
+    
+//     let value = rx.recv().unwrap();
+//     println!("{}", value);
+// }
+
+
+
+// use std::{
+//     iter::Sum, sycn::mpsc, thread::{self, spawn}
+// };
+
+// fn main() {
+//     let (tx, rx) = mpsc::channel();
+    
+//     for i in 0..10 {
+//         let producer = tx.clone();
+//         spawn(move || {
+//             let mut ans: u64 = 0;
+//             for j in 0..10000000 {
+//                 ans = ans + (i * 10000000 + j);
+//             }
+//             producer.send(ans).unwrap();
+//         });
+//     }
+//     drop(tx);
+
+
+//     let mut ans: u64 = 0;
+//     for val in rx {
+//         println!("recv value from thread");
+//         ans = ans + val;
+//     }
+//     println!("Ans is : {}", ans);
+
+// }
+
