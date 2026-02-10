@@ -594,15 +594,6 @@ Advanced Rust (slightly)
 //     println!("{:?}", ans);
 // }
 
-
-
-
-
-
-
-
-
-
 // 4. Strings & Slices
 
 // creating a string, mutating a string, deleting a string.
@@ -615,16 +606,13 @@ Advanced Rust (slightly)
 // }
 // output: Appl
 
-
-
 // Q: Write a function that takes a string as an input and returns the first word from it.
 
 // Approach 1
 
-// problem with above code ? 
+// problem with above code ?
 // -- We take up double the memory -- if the 'name' string getss 'cleaed', 'ans' still has 'hello' as the value in it.
 // we want to 'view' in to the original string and not copy it over.
-
 
 // Approach 2:
 
@@ -639,28 +627,18 @@ Advanced Rust (slightly)
 //     for i in word.chars().enumerate() {
 //         if i == ' ' {
 //             break;
-//         } 
+//         }
 //         index = index + 1;
 //     }
 //     return &word[0..index];
 // }
-
 
 // fn main() {
 //     let arr = [1,2,4,5,4];
 //     let arr_slice = &arr[0..1];
 // }
 
-
-
-
-
-
-
-
-
 // 5. Generics
-
 
 // ex of code1
 
@@ -687,9 +665,7 @@ Advanced Rust (slightly)
 //     }
 // }
 
-
-
-// rust quivalent code of the above code1 , 
+// rust quivalent code of the above code1 ,
 
 // fn main() {
 //     let bigger = largest(1,2);
@@ -706,48 +682,185 @@ Advanced Rust (slightly)
 //     }
 // }
 
-
-
-
-
-
-
-
-
 // 6. Traits
 
 // similar to abstract classes of Java
 // similar to interfaces of Js
 
-pub trait Summary {
-    fn summarize(&self) -> String;
-}
+// pub trait Summary {
+//     fn summarize(&self) -> String;
+// }
 
-struct User {
-    name: String,
-    age: u32,
-}
+// struct User {
+//     name: String,
+//     age: u32,
+// }
 
-impl Summary for User {
-    fn summarize(&self) -> String {
-        return format!("User {} is {} years old", self.name , self.age);
-    }
-}
+// impl Summary for User {
+//     fn summarize(&self) -> String {
+//         return format!("User {} is {} years old", self.name , self.age);
+//     }
+// }
 
-struct Fix;
-impl Summary for Fix {}
-impl Summary for User  {}
+// struct Fix;
+// impl Summary for Fix {}
+// impl Summary for User  {}
 
+// fn main() {
+//     let user = User {
+//         name: String::from("Applexity");
+//         age: 21;
+//     }
+//     println!("{}", user.summarize());
+// }
+
+// fn notify(u: impl Summary) {
+//     println!("{}", u.summarize())
+// }
+
+// 7. Lifetimes
+
+// Q: write a function that takes two strings as an inputs, and returns the bigger amongst them
+
+// fn longest(a: String, b: String) -> String {
+//     if a.len() > b.len() {
+//         return a;
+//     } else {
+//         return b;
+//     }
+// }
+
+// fn main() {
+//     let longest_str;
+//     let str1 = String::from("Small");
+//     let str2 = String::from("Longer");
+
+//     longest_str = longest(str1, str2);
+//     println!("{}", longest_str);
+// }
+
+// Q: Write a function that takes two string refrences as an input and return the bigger amoungst them.
+
+// fn longest(a: &str, b: &str) -> &str {
+//     if a.len() > b.len() {
+//         return a;
+//     } else {
+//         return b;
+//     }
+// }
+
+// fn main() {
+//     let longest_str;
+//     let str1 = String::from("Small");
+//     {
+//         let str2 = String::from("Longer");
+
+//         longest_str = longest(&str1, &str2);
+//     }
+
+//     println!("{}", longest_str);
+// }
+
+// generic lifetime enumeration
+// fn longest<'a>(str1: &'a str, str2: &'a str) -> &'a str { // life intersection of both of str1 and str2
+//     if str1.len() > str2.len() {
+//         return str1;
+//     } else {
+//         return str2;
+//     }
+// }
+
+// fn main() {
+//     let ans;
+//     let str1 = String::from("Small");
+//     {
+//         let str2 = String::from("Longer");
+
+//         ans = longest(&str1, &str2);
+//     }
+
+//     println!("{}", ans);
+// }
+
+// Structs with lifetimes
+
+// this fails
+// struct User {
+//     name: &str
+// }
+// fn main() {
+//     let name = String::from("Applexity");
+//     let user = User {
+//         name: &name
+//     };
+//     println!("{}", user.name);
+// }
+
+// this will work
+// struct User<'a> {
+//     name: &'a str
+// }
+// fn main() {
+//     let name = String::from("Applexity");
+//     let user = User {
+//         name: &name
+//     };
+//     println!("{}", user.name);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 8. Multithreading
+
+// use std::thread;
+// fn main() {
+//     let handle = thread::spawn(|| {
+//         for i in 0..5 {
+//             println!("Hi from Spawned thread {}", i);
+//         }
+//     });
+
+//     for i in 0..50 {
+//         println!("Hii from main thread {}", i);
+//     }
+
+//     handle.join().unwrap();
+// }
+
+
+
+
+
+
+
+
+
+// move closure
+
+use std::thread;
 
 fn main() {
-    let user = User {
-        name: String::from("Applexity");
-        age: 21;
+    let x = 1;
+    {
+        let v = vec![1,2,3,4];
+        thread::spawn(|| {
+            println!("{:?}", v);
+        });
     }
-    println!("{}", user.summarize());
+    print!("{}", x);
 }
-
-fn notify(u: impl Summary) {
-    println!("{}", u.summarize()) 
-} 
-
