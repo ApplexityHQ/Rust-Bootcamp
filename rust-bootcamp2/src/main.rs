@@ -596,6 +596,8 @@ fn filter_and_map(v) -> Vec<i32> {
     return new_vec;
 }
 
+
+
 fn main() {
     let v1 = vec![1,2,4,5];
     let ans = filter_and_map(v1);
