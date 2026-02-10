@@ -691,17 +691,63 @@ Advanced Rust (slightly)
 
 // rust quivalent code of the above code1 , 
 
-fn main() {
-    let bigger = largest(1,2);
-    let bigger_char = largest('a', 'b');
-    println!("{}", bigger);
-    print!("{}", bigger_char);
+// fn main() {
+//     let bigger = largest(1,2);
+//     let bigger_char = largest('a', 'b');
+//     println!("{}", bigger);
+//     print!("{}", bigger_char);
+// }
+// // generic
+// fn largest<T: std::cmp::PartialOrd>(a:T , b:T) -> T {
+//     if a > b {
+//         a
+//     } else {
+//         b
+//     }
+// }
+
+
+
+
+
+
+
+
+
+// 6. Traits
+
+// similar to abstract classes of Java
+// similar to interfaces of Js
+
+pub trait Summary {
+    fn summarize(&self) -> String;
 }
-// generic
-fn largest<T: std::cmp::PartialOrd>(a:T , b:T) -> T {
-    if a > b {
-        a
-    } else {
-        b
+
+struct User {
+    name: String,
+    age: u32,
+}
+
+impl Summary for User {
+    fn summarize(&self) -> String {
+        return format!("User {} is {} years old", self.name , self.age);
     }
 }
+
+struct Fix;
+impl Summary for Fix {}
+impl Summary for User  {}
+
+
+fn main() {
+    let user = User {
+        name: String::from("Applexity");
+        age: 21;
+    }
+    println!("{}", user.summarize());
+}
+
+fn notify(u: impl Summary) {
+    println!("{}", u.summarize()) 
+} 
+
