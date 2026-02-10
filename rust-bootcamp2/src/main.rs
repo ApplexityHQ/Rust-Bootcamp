@@ -650,3 +650,58 @@ Advanced Rust (slightly)
 //     let arr = [1,2,4,5,4];
 //     let arr_slice = &arr[0..1];
 // }
+
+
+
+
+
+
+
+
+
+// 5. Generics
+
+
+// ex of code1
+
+// fn main() {
+//     let bigger = largest_i32(1,2);
+//     let bigger_char = largest('a', 'b');
+//     println!("{}", bigger);
+//     println!("{}", bigger_char);
+// }
+
+// fn largest_i32(a: i32, b: i32) -> i32 {
+//     if a > b {
+//         a
+//     } else {
+//         b
+//     }
+// }
+
+// fn largest_char(a: char, b: char) -> char {
+//     if a > b {
+//         a
+//     } else {
+//         b
+//     }
+// }
+
+
+
+// rust quivalent code of the above code1 , 
+
+fn main() {
+    let bigger = largest(1,2);
+    let bigger_char = largest('a', 'b');
+    println!("{}", bigger);
+    print!("{}", bigger_char);
+}
+// generic
+fn largest<T: std::cmp::PartialOrd>(a:T , b:T) -> T {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
