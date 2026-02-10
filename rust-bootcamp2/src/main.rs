@@ -542,8 +542,6 @@ Advanced Rust (slightly)
 // 2. .iter_mut
 // 3. into_iter()
 
-
-
 // Iterators (Consuming Adaptors)
 
 // fn main () {
@@ -552,19 +550,17 @@ Advanced Rust (slightly)
 
 //     let sum = v1_iter.sum();
 
-//     println!("sum is {}", sum); 
+//     println!("sum is {}", sum);
 
 //     for i in v1_iter {}
 //     println!("{:?}", v1);
 // }
 
-
-
 // filter even values
 // fn main() {
 //     let v1 = vec![1,3,4,5];
 //     let iter = v1.iter();
-    
+
 //     let iter2 = iter.filter(|x| *x % 2 == 0);
 
 //     for x in iter2 {
@@ -572,15 +568,11 @@ Advanced Rust (slightly)
 //     }
 // }
 
-
-
-
-
 // filter odd values
 // fn main() {
 //     let v1 = vec![1,3,4,5];
 //     let iter = v1.iter();
-    
+
 //     let iter2 = iter.filter(|x| *x % 2 == 1);
 
 //     for x in iter2 {
@@ -590,16 +582,71 @@ Advanced Rust (slightly)
 
 // Q. Write the logic to first filter all odd values then double each value and create a new vector
 
-fn filter_and_map(v) -> Vec<i32> {
-    let new_iter = v.iter().filter(|x| *x % 2 == 1).map(|x| x + 1);
-    let new_vec = new_iter.collect();
-    return new_vec;
-}
+// fn filter_and_map(v) -> Vec<i32> {
+//     let new_iter = v.iter().filter(|x| *x % 2 == 1).map(|x| x + 1);
+//     let new_vec = new_iter.collect();
+//     return new_vec;
+// }
+
+// fn main() {
+//     let v1 = vec![1,2,4,5];
+//     let ans = filter_and_map(v1);
+//     println!("{:?}", ans);
+// }
 
 
 
-fn main() {
-    let v1 = vec![1,2,4,5];
-    let ans = filter_and_map(v1);
-    println!("{:?}", ans);
-}
+
+
+
+
+
+
+
+// 4. Strings & Slices
+
+// creating a string, mutating a string, deleting a string.
+// fn main() {
+//     let mut name = String::from("Applexity");
+//     name.push_str(" Ox");
+//     println!("name is {}", name);
+//     name.replace_range(4..name.len(), "");
+//     println!("NAME is {}", name);
+// }
+// output: Appl
+
+
+
+// Q: Write a function that takes a string as an input and returns the first word from it.
+
+// Approach 1
+
+// problem with above code ? 
+// -- We take up double the memory -- if the 'name' string getss 'cleaed', 'ans' still has 'hello' as the value in it.
+// we want to 'view' in to the original string and not copy it over.
+
+
+// Approach 2:
+
+// fn main() {
+//     let mut word = String::from("Hello World");
+
+//     println!("{}", word2);
+// }
+
+// fn find_first_word(word: String) -> &str {
+//     let index = 0;
+//     for i in word.chars().enumerate() {
+//         if i == ' ' {
+//             break;
+//         } 
+//         index = index + 1;
+//     }
+//     return &word[0..index];
+// }
+
+
+// fn main() {
+//     let arr = [1,2,4,5,4];
+//     let arr_slice = &arr[0..1];
+// }
